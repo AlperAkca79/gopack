@@ -10,6 +10,10 @@ import (
 )
 
 func Compress(inputFile string, outputFile string) {
+	if inputFile == "" {
+		os.Exit(1)
+	}
+
 	// open input file
 	input, err := os.Open(inputFile)
 	if err != nil {
